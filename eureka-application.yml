@@ -1,6 +1,6 @@
 spring:
   application:
-    name: "eureka-microservice"
+    name: "eureka-application"
   config:
     import: "optional:configserver:http://localhost:8071/"
     
@@ -18,7 +18,8 @@ management:
     health:
       probes:
         enabled: true    
-
+server:
+  port: 8073
             
         
     
