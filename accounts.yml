@@ -1,58 +1,11 @@
-server:
-  port: 9000
-
-spring:
- application:
-  name: "accounts"
- profiles:
-  active: "qa"
-
 build:
- version: 2.0
+  version: "1.1.143" 
   
- config:
-  enabled: false
-  import: "optional:configserver:http://localhost:8071/"
-    
- datasource:
-  url: jdbc:h2:mem:accountsdb
-  driverClassName: org.h2.Driver
-  username: admin
-  password: 1234
- h2:
-  console:
-   enabled: true
-   settings:
-    web-allow-others: true
- jpa:
-  database-platform: org.hibernate.dialect.H2Dialect
-  hibernate:
-   ddl-auto: update
-  show-sql: true  
-  
-eureka:
-  instance:
-    preferIpAddress: true
-  client:
-    fetchRegistry: true
-    registerWithEureka: true
-    serviceUrl:
-      defaultZone: http://localhost:8070/eureka/  
-      
-info:
-  app:
-    name: "accounts"
-    description: "Zetta Bank Accounts Application"
-    version: "1.0.0"
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    shutdown:
-      enabled: true
-  info:
-    env:
-      enabled: true
+accounts:
+  message: "Welcome to ZettaBank accounts related APIs DEVELOPER"
+  contactDetails:
+    name: "Zaiba Khan- Developer"
+    email: "zaiba@zettabank.com"
+  onCallSupport:
+    - (40) 123-45678
+    - (40) 456-13459
