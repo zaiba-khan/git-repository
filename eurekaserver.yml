@@ -1,16 +1,11 @@
 server:
-  8070
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  health:
-    readinessstate:
-      enabled: true
-    livenessstate:
-      enabled: true
-  endpoint:
-    health:
-      probes:
-        enabled: true    
+port: 8070
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
+  
