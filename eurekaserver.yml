@@ -1,5 +1,5 @@
 server:
-  8073
+  8070
 management:
   endpoints:
     web:
