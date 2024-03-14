@@ -1,4 +1,5 @@
-    
+server:
+  8073
 management:
   endpoints:
     web:
