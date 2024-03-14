@@ -1,24 +1,17 @@
+server:
+  port: 8071
 spring:
   application:
-    name: "eureka-microservice"
-  config:
-    import: "optional:configserver:http://localhost:8071/"
-    
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  health:
-    readinessstate:
-      enabled: true
-    livenessstate:
-      enabled: true
-  endpoint:
-    health:
-      probes:
-        enabled: true    
-
-            
-        
-    
+    name: "configserver"
+  profiles:
+    active:
+    - git
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/zaiba-khan/git-repository.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
